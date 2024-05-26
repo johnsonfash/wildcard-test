@@ -3,8 +3,13 @@
 	"buildCommand": "npm run build",
 	"installCommand": "npm install",
 	"devCommand": "npm start",
-	"outputDirectory": ".",
+	"outputDirectory": "/build",
 	"builds": [
+		{
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    },
 		{
 			"src": "server.js",
 			"use": "@vercel/node"
