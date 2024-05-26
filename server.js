@@ -15,6 +15,7 @@ app.use('/', (req, res, next) => {
   // } else {
   // }
   static(req, res, next);
+  
   // res.sendFile(path.join(__dirname, 'error.html'));
 });
 
