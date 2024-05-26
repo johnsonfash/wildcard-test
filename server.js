@@ -28,7 +28,6 @@ app.use('*', function (_, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT} : http://localhost:${PORT}`);
 });
