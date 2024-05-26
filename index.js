@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -7,11 +8,23 @@ const PORT = process.env.PORT || 3001;
 const static = express.static(path.join(__dirname, 'build'));
 
 app.use('/', (req, res, next) => {
-  static(req, res, next);
+  const hostname = req.hostname;
+  const [subdomain, ..._] = hostname.split('.');
+  if (subdomain == 'error') {
+    res.sendFile(path.join(__dirname, 'error.html'));
+  } else {
+    static(req, res, next);
+  }
 });
 
 app.use('*', function (_, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  const hostname = req.hostname;
+  const [subdomain, ..._] = hostname.split('.');
+  if (subdomain == 'error') {
+    res.sendFile(path.join(__dirname, 'error.html'));
+  } else {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  }
 });
 
 

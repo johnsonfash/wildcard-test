@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from './logo.svg';
+import logo from './asset/logo.svg';
 
 const Login = () => {
   return <div className="App">
