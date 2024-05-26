@@ -15,20 +15,12 @@ app.use('/', (req, res, next) => {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
   // }
-  // fs.readdir(__dirname, (err, files) => {
-  //   if (err) {
-  //     console.error('Error reading directory:', err);
-  //     return;
-  //   }
-
-  //   const folders = files.filter((file) => {
-  //     const filePath = path.join(directoryPath, file);
-  //     const stats = fs.statSync(filePath);
-  //     return stats.isDirectory();
-  //   });
-
-  //   console.log('Folders in the directory:', JSON.stringify(folders));
-  // });
+  try {
+    const Folders = fs.readdirSync(__dirname);
+    console.log('folder', Folders)
+  } catch (error) {
+    console.log(error)
+  }
   static(req, res, next);
   // res.sendFile(path.join(__dirname, 'error.html'));
 });
@@ -40,20 +32,12 @@ app.use('*', function (_, res) {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
   // }
-  // fs.readdir(__dirname, (err, files) => {
-  //   if (err) {
-  //     console.error('Error reading directory:', err);
-  //     return;
-  //   }
-
-  //   const folders = files.filter((file) => {
-  //     const filePath = path.join(directoryPath, file);
-  //     const stats = fs.statSync(filePath);
-  //     return stats.isDirectory();
-  //   });
-
-  //   console.log('Folders in the directory:', JSON.stringify(folders));
-  // });
+  try {
+    const Folders = fs.readdirSync(__dirname);
+    console.log('folder', Folders)
+  } catch (error) {
+    console.log(error)
+  }
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
