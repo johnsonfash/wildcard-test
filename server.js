@@ -9,8 +9,8 @@ const static = express.static(path.join(__dirname, 'build'));
 
 app.use('/', (req, res, next) => {
   const hostname = req.hostname;
-  console.log(hostname)
-  // const [subdomain, ..._] = hostname.split('.');
+  const [subdomain, ..._] = hostname.split('.');
+  console.log('subdomain', subdomain)
   // if (subdomain == 'error') {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
@@ -20,8 +20,8 @@ app.use('/', (req, res, next) => {
 
 app.use('*', function (_, res) {
   const hostname = req.hostname;
-  console.log(hostname)
-  // const [subdomain, ..._] = hostname.split('.');
+  const [subdomain, ..._] = hostname.split('.');
+  console.log('subdomain', subdomain);
   // if (subdomain == 'error') {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
