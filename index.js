@@ -5,7 +5,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-const static = express.static(path.join(__dirname, 'build'));
+// const static = express.static(path.join(__dirname, 'build'));
 
 app.use('/', (req, res, next) => {
   // const hostname = req.hostname;
