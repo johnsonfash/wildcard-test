@@ -11,12 +11,10 @@ app.use('/', (req, res, next) => {
   const hostname = req.hostname;
   if (typeof hostname == 'string') {
     const split = hostname.split('.');
-    console.log('split', split)
+    if (split[0] == 'error') {
+      return res.sendFile(path.join(__dirname, 'error.html'));
+    }
   }
-  // if (subdomain == 'error') {
-  //   res.sendFile(path.join(__dirname, 'error.html'));
-  // } else {
-  // }
   static(req, res, next);
 });
 
@@ -24,12 +22,10 @@ app.use('*', function (_, res) {
   const hostname = req.hostname;
   if (typeof hostname == 'string') {
     const split = hostname.split('.');
-    console.log('split', split)
+    if (split[0] == 'error') {
+      return res.sendFile(path.join(__dirname, 'error.html'));
+    }
   }
-  // if (subdomain == 'error') {
-  //   res.sendFile(path.join(__dirname, 'error.html'));
-  // } else {
-  // }
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
