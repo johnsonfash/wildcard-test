@@ -26,7 +26,6 @@ app.use('*', function (_, res) {
   // } else {
   // }
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  // res.sendFile(path.join(__dirname, 'error.html'));
 });
 
 
