@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "react-scripts build",
     "start:main": "react-scripts start",
     "build:mian": "react-scripts build",
