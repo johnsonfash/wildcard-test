@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -15,12 +14,6 @@ app.use('/', (req, res, next) => {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
   // }
-  try {
-    const Folders = fs.readdirSync(__dirname);
-    console.log('folder', Folders)
-  } catch (error) {
-    console.log(error)
-  }
   static(req, res, next);
   // res.sendFile(path.join(__dirname, 'error.html'));
 });
@@ -32,12 +25,6 @@ app.use('*', function (_, res) {
   //   res.sendFile(path.join(__dirname, 'error.html'));
   // } else {
   // }
-  try {
-    const Folders = fs.readdirSync(__dirname);
-    console.log('folder', Folders)
-  } catch (error) {
-    console.log(error)
-  }
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
