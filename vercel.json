@@ -1,19 +1,5 @@
 {
 	"version": 2,
-	"outputDirectory": "build",
-	"buildCommand": "react-scripts build",
-	"installCommand": "npm install",
-	"builds": [
-		{
-			"src": "server.js",
-			"use": "@vercel/node",
-			"config": {
-				"includeFiles": [
-					"build/**"
-				]
-			}
-		}
-	],
 	"routes": [
 		{
 			"src": "/(.*)",
